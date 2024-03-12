@@ -3,7 +3,8 @@ pipe_line_1 = [
         '$project': {
             'userId': {'$arrayElemAt': ['$events.attributes.userId', 0]},
             'firstEventDateTime': 1,
-            '_id': 1
+            '_id': 1,
+            'document': '$$ROOT'
         }
     },
     {
@@ -12,7 +13,8 @@ pipe_line_1 = [
             'data': {
                 '$push': {
                     'sessionId': '$_id',
-                    'eventDateTime': '$firstEventDateTime'
+                    'eventDateTime': '$firstEventDateTime',
+                    'document': '$$ROOT'
                 }
             }
         }

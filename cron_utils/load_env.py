@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_dir = os.path.dirname(os.path.dirname(script_dir))
 env_path = os.path.join(project_dir, 'cron_env', '.env')
-print(env_path)
 load_dotenv(dotenv_path=env_path)
 
 
